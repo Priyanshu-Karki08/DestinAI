@@ -3,7 +3,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/custom/Header";
-import CreateTrip from "./Pages/createTrip";
+import CreateTrip from "./Pages/CreateTrip";
 import { Toaster } from "react-hot-toast";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import ViewTrip from "./Pages/ViewTrip";
