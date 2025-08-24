@@ -72,7 +72,7 @@ const CreateTrip = () => {
 
     setLoading(true);
 
-    const Final_Prompt = AI_PROMPT.replace("{location}", formData?.destination)
+    const Final_Prompt = AI_PROMPT.replace("{location}", formData?.destination?.name)
       .replace("{totalDays}", formData?.noOfDays)
       .replace("{traveler}", formData?.traveler)
       .replace("{budget}", formData?.budget);
@@ -159,9 +159,11 @@ const CreateTrip = () => {
         <div className="mt-8">
           <h2 className="text-xl text-white font-semibold">Trip Duration</h2>
           <Input
-            placeholder="Ex. 3 (max 7)"
+            placeholder="Ex. 3 (max 10)"
             type="number"
-            onChange={(e) => handleInputChange("noOfDays", e.target.value)}
+            min = {1}
+            max = {10}
+            onChange={(e) => handleInputChange("noOfDays", parseInt(e.target.value) || "")}
             className="mt-4 w-full text-white rounded-xl border-gray-300 focus:ring-2 focus:ring-orange-500"
           />
         </div>
@@ -212,12 +214,20 @@ const CreateTrip = () => {
 
         {/* Generate Trip */}
         <div className="mt-12 flex justify-end">
-          <Button
-            className="bg-orange-600 hover:bg-orange-700 rounded-xl px-6 py-3 text-lg font-semibold shadow-md hover:shadow-xl transition"
+          {localStorage.getItem('user') ? <Button
+            className="cursor-pointer bg-orange-600 hover:bg-orange-700 rounded-xl px-6 py-3 text-lg font-semibold shadow-md hover:shadow-xl transition"
             onClick={onGenerateTrip}
           >
             {loading ? <Loader className="animate-spin" /> : "🚀 Generate Trip"}
           </Button>
+          : 
+          <Button
+            disabled = {true}
+            className="cursor-pointer bg-orange-600 hover:bg-orange-700 rounded-xl px-6 py-3 text-lg font-semibold shadow-md hover:shadow-xl transition">
+            Please Sign in 
+          </Button>
+          }
+
         </div>
       </div>
 

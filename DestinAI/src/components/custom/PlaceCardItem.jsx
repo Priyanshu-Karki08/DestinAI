@@ -25,10 +25,10 @@ const PlaceCardItem = ({ place }) => {
               .largeImageURL;
           setImageUrl(randomImg);
         } else {
-          setImageUrl("https://wallpaperaccess.com/full/136008.jpg"); // fallback
+          setImageUrl("https://tse3.mm.bing.net/th/id/OIP.HPhM0UyhZfKMO4U_X16AIQHaFG?pid=Api&P=0&h=180https://wallpaperaccess.com/full/136008.jpg"); // fallback
         }
       } catch (error) {
-        setImageUrl("https://wallpaperaccess.com/full/136008.jpg");
+        setImageUrl("https://tse3.mm.bing.net/th/id/OIP.HPhM0UyhZfKMO4U_X16AIQHaFG?pid=Api&P=0&h=180");
       }
     };
 

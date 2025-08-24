@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const HotelSection = ({ trip }) => {
   const [images, setImages] = useState([]);
@@ -26,10 +25,10 @@ const HotelSection = ({ trip }) => {
               // or: pick random one from hits
               // return data.hits[Math.floor(Math.random() * data.hits.length)].largeImageURL;
             } else {
-              return "https://wallpaperaccess.com/full/136008.jpg"; // fallback
+              return "https://tse1.mm.bing.net/th/id/OIP.mm5A0pos3roWRgXQqKPPBgHaE8?pid=Api&P=0&h=180"; // fallback
             }
           } catch (err) {
-            return "https://wallpaperaccess.com/full/136008.jpg"; // fallback
+            return "https://tse1.mm.bing.net/th/id/OIP.mm5A0pos3roWRgXQqKPPBgHaE8?pid=Api&P=0&h=180"; // fallback
           }
         })
       );

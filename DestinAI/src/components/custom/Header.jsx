@@ -78,7 +78,7 @@ const Header = () => {
               </PopoverTrigger>
               <PopoverContent>
                 <h2
-                  className="cursor-pointer"
+                  className="cursor-pointer text-bold text-xl"
                   onClick={() => {
                     googleLogout();
                     localStorage.clear();
